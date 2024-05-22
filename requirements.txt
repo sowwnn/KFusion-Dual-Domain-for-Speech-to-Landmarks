@@ -1,0 +1,11 @@
+torch
+torchvision
+torchaudio
+lightning
+torchmetrics
+opencv-python
+pandas
+numpy
+matplotlib
+boto3
+decord
