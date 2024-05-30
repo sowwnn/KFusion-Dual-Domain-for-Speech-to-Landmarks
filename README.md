@@ -6,7 +6,7 @@
 - Stage2: Lankmark to Talking Face
 ---
 2. Todo:
-- [ ] Data extractiation [Due: 24.05.2024]
+- [x] Data extractiation [Due: 24.05.2024]
     - [x] Crop Video
     - [x] Video to Landmark (Mediapipe, Face_alignments)
     + [ ]

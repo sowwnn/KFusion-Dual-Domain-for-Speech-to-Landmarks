@@ -67,7 +67,7 @@ def media_pipe_landmarks(files, exist, input_dir, output_dir):
     VisionRunningMode = mp.tasks.vision.RunningMode
 
     options = FaceLandmarkerOptions(
-        base_options=BaseOptions(model_asset_path="ultis/FaceLandmarker.task"),
+        base_options=BaseOptions(model_asset_path="utils/FaceLandmarker.task"),
         running_mode=VisionRunningMode.IMAGE)
 
     with FaceLandmarker.create_from_options(options) as landmarker:
@@ -95,7 +95,7 @@ def media_pipe_landmarks(files, exist, input_dir, output_dir):
                 
             np.save(f"{output_dir}/{out_name}", new)
 
-def main(input_dir = "data_crop", datalist = "ultis/datalist.json", output_dir = "temp", mode="mediapipe"):
+def main(input_dir = "data_crop", datalist = "utils/datalist.json", output_dir = "temp", mode="mediapipe"):
     files = json.load(open(datalist, "r"))
     exist = os.listdir(f"{output_dir}")
     if mode=="face_alignment":
@@ -128,9 +128,9 @@ def check(args):
 
 if __name__ == "__main__":
     args = argparse.ArgumentParser()
-    args.add_argument("--input_path", type=str, default="dataset/data_crop")
-    args.add_argument("--datajson", type=str, default="dataset/data_crop/datalist.json")
-    args.add_argument("--output_path", type=str, default="dataset/mp_landmark")
+    args.add_argument("--input_path", type=str, default="dataset/vidcrops")
+    args.add_argument("--datajson", type=str, default="utils/datalist.json")
+    args.add_argument("--output_path", type=str, default="dataset/mp_landmarks")
     args.add_argument("--mode", type=str, default="mediapipe")
 
 

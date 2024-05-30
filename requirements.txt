@@ -5,7 +5,10 @@ lightning
 torchmetrics
 opencv-python
 pandas
+av
 numpy
 matplotlib
+face_alignment
+mediapipe
 boto3
 decord
