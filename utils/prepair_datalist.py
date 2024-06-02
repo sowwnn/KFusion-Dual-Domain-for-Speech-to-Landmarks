@@ -10,7 +10,7 @@ def main(root, output):
                 'happy': 4, 'surprised': 5, 'disgusted': 6, 'neutral': 7}
     datalist = []
     for fol in fols:
-        if fol in ['W017','W021']: continue
+        if fol in ['W017']: continue
         for emo in emotions.keys():
             end = 4
             if emo=="neutral":
