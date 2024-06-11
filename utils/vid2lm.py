@@ -19,21 +19,17 @@ def fa_extract(files, exist, input_dir, output_dir):
         out_path = f"{row['video']}".replace("/", "_").replace("video_", "")
 
         out_name = f"{out_path.replace('.mp4','')}.npy"
-        if out_name in exist:
-            continue
-
-        video = io.read_video(f"{input_dir}/{out_path}", pts_unit="sec",output_format="TCHW")[0]
-        new = np.zeros((video.shape[0],68,2))
-        # print(f"New {new.size}")
-        # print(video.shape)
-        for idx, frame in enumerate(video):
-            for i in range(5):
-                try:
+        if out_name not in exist:
+            try:
+                video = io.read_video(f"{input_dir}/{out_path}", pts_unit="sec",output_format="TCHW")[0]
+                new = np.zeros((video.shape[0],68,2))
+                for idx, frame in enumerate(video):
                     results = fa.get_landmarks(frame.permute(1, 2, 0).numpy())
                     new[idx] = results[0]
-                    break
-                except: pass
-        np.save(f"{output_dir}/{out_name}", new)
+                np.save(f"{output_dir}/{out_name}", new)
+            except:
+                print(f"{input_dir}/{out_path} is not exist")
+                continue
 
 def landmarks_to_numpy(results):
   """Converts MediaPipe landmarks to a NumPy matrix.

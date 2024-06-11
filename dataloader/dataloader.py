@@ -20,7 +20,8 @@ class MEAD(Dataset):
 
         waveform, sample_rate = torchaudio.load(f"dataset/audios/{row['audio']}", num_frames= 48000* self.time)
         landmark =  torch.from_numpy(np.load(f"dataset/mp_landmarks/{row['landmark']}")).permute(2,0,1)[:,:60]
-        ilm = landmark[:,0,:]
+        # ilm = landmark[:,0,:]
+        ilm = torch.mean(landmark, dim=1)
         # waveform = torch.load(f"dataset/vec2s/{row['name']}.pt")
 
         return {'name': row['name'], 'audio':waveform.float(), 'target':landmark.float(), 'ilm':ilm.float(), 'label':row['emotion']}

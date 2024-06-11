@@ -25,19 +25,20 @@ def main(root, output):
                     if af in videos:
                         row = {"audio": f"{fol}/audio/{emo}/level_{level}/{f}",
                             "video": f"{fol}/video/front/{emo}/level_{level}/{af}", 
-                            "label": emotions[emo]}
+                            "label": emotions[emo],
+                            }
                         datalist.append(row)
 
     with open(output, "w") as f:
         json.dump(datalist, f)
 
-def after_extract(root, output):
+def after_extract(output):
     emotions = {'angry': 0, 'fear': 1, 'sad': 2, 'contempt': 3,
                     'happy': 4, 'surprised': 5, 'disgusted': 6, 'neutral': 7}
 
     audios = os.listdir("dataset/audios")
     videos = os.listdir("dataset/vidcrops")
-    landmarks = os.listdir("dataset/mp_landmarks")
+    landmarks = os.listdir("dataset/face_alignment")
 
     datalist = []
     for aud in audios:
@@ -45,10 +46,11 @@ def after_extract(root, output):
         emo,_ = file.split('_',1)
         vid = f"{fol}_front_{file.replace('wav', 'mp4')}"
         lm  = f"{fol}_front_{file.replace('wav', 'npy')}"
+        name = f"{fol}_{file.replace('.wav', '')}"
         if vid in videos and lm in landmarks:
-            datalist.append({'video': vid, 'audio': aud, 'landmark': lm, 'emotion': emotions[emo]})
+            datalist.append({'video': vid, 'audio': aud, 'landmark': lm, 'emotion': emotions[emo], "name": name})
 
-    with open("dataset/datalist.json", "w") as f:
+    with open(output, "w") as f:
         json.dump(datalist, f)
 
 if __name__ == "__main__":
