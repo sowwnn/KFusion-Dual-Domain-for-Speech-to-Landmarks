@@ -28,9 +28,9 @@ class Transformer(L.LightningModule):
         return x
 
 
-class S2LM(L.LightningModule):
+class KFusionLM(L.LightningModule):
     def __init__(self, batch, init_lr, num_of_landmarks=478):
-        super(S2LM, self).__init__()
+        super(KFusionLM, self).__init__()
 
         torch.autograd.set_detect_anomaly(True)
 

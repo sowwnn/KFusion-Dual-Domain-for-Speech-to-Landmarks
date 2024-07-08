@@ -1,0 +1,13 @@
+{
+
+    "datalist": "dataset/duration/fa_datalist.json",
+    "duration": 1,
+    "max_epochs": 2,
+    "batch": 4,
+
+    "init_lr": 3e-4,
+    "val_epochs": 4,
+    "save_weights": "weights",
+
+    "is_test": true
+}
