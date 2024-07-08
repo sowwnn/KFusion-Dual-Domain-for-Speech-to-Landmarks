@@ -12,12 +12,12 @@ torch.set_float32_matmul_precision("high")
 
 def init_data(args):
     batch = args['batch']
-    datas = MEAD(args['datalist'], duration=args['duration'], batch=batch)
+    datas = MEAD(args['datalist'], duration=args['duration'], batch=batch, audio_path=args['audio_path'], landmark_path=args['landmark_path'])
     trainsize = int(len(datas) * (90 /100) / batch) * batch
     testsize = len(datas) - trainsize
     train_dataset, test_dataset = torch.utils.data.random_split(datas, [trainsize, testsize])
-    train_dataloader = DataLoader(train_dataset, batch_size=batch, shuffle=True,  num_workers=16)
-    test_dataloader = DataLoader(test_dataset, batch_size=batch, shuffle=False,  num_workers=16)
+    train_dataloader = DataLoader(train_dataset, batch_size=batch, shuffle=True,  num_workers=args["num_workers"])
+    test_dataloader = DataLoader(test_dataset, batch_size=batch, shuffle=False,  num_workers=args["num_workers"])
     return train_dataloader, test_dataloader
 
 def main(args):
