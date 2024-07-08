@@ -1,10 +1,7 @@
 import torch
 import torch.nn as nn
 import torchaudio
-import lightning as L
-import torchaudio.transforms as T
-from metrix.LM import LandmarkDistance, LandmarkVelocityDifference
-from module.KAN import KAN
+import pytorch_lightning as L
 
 class Transformer(L.LightningModule):
     def __init__(self, in_c, out_c, nhead, num_lay=2, sub_chanel=49,):
@@ -49,8 +46,8 @@ class S2LM(L.LightningModule):
         self.trans_gb = Transformer(in_c=768, out_c=num_of_landmarks, nhead=2, num_lay=1)
         self.trans_gbm = Transformer(in_c=768, out_c=len(self.MOUTH_LANDMARKS), nhead=2, num_lay=1)
 
-        self.lstm = nn.LSTM(input_size=768, hidden_size=68, num_layers=1, batch_first=True, bidirectional=True)
-        self.mouth = nn.LSTM(input_size=768, hidden_size=len(self.MOUTH_LANDMARKS), num_layers=1, batch_first=True, bidirectional=True)
+        self.lstm = nn.LSTM(input_size=768, hidden_size=68, num_layers=1, batch_first=True, bidirectional=True, dropout=0.3)
+        self.mouth = nn.LSTM(input_size=768, hidden_size=len(self.MOUTH_LANDMARKS), num_layers=1, batch_first=True, bidirectional=True, dropout=0.3)
 
         self.R1 = nn.Sequential(
             nn.Conv2d(147, 256, 3, 1, 1),
@@ -139,7 +136,7 @@ class S2LM(L.LightningModule):
 
     def configure_optimizers(self):
         optimizer = torch.optim.Adam(self.parameters(), lr=self.init_lr)
-        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200, eta_min=0.00001)
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=50, eta_min=0.00001)
         return {
             'optimizer': optimizer,
             'lr_scheduler': scheduler,

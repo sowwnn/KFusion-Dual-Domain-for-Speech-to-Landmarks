@@ -1,0 +1,19 @@
+name: s2lm
+dependencies:
+  - pandas
+  - lightning
+  - opencv
+  - numpy
+  - transformers
+  - torchmetrics
+  - torchvision
+  - matplotlib
+  - pip: 
+    - face_alignment
+    - boto3
+    - decord
+    - wandb
+    - av
+    - mediapipe
+    - torchaudio
+    - torch
