@@ -13,7 +13,7 @@ Overview of ours model, the input is audio and one identity image, the output is
 ### Training
 0. Clone ours repository
    ```bash
-   git clone https://github.com/
+   git clone https://github.com/RC-Sho0/KFusion-Dual-Domain-for-Speech-to-Landmarks.git
    ```
 1. Create the environment
     ```bash
