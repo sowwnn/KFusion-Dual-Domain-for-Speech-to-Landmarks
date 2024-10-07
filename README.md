@@ -70,18 +70,9 @@ Overview of ours model, the input is audio and one identity image, the output is
 
 
 ### Demo:
-   This is compaired of the results with ground truth.
-
+   You can check in [stats/infer_results/240625*](stats/infer_results/240625) it is compaired of the results with ground truth.
+   
    *The First column is Identify Video it not used in the model, 2nd is Ground Truth, last one is the Prediction*
-
-
-   <video width="320" height="240" controls>
-      <source src="stats/infer_results/240625/video_3.mp4" type="video/mp4">
-   </video>
-
-   <video width="320" height="240" controls>
-      <source src="stats/infer_results/240625/video_1.mp4" type="video/mp4">
-   </video>
 
 
 ***Please star and follow if this repository helpful for you***
