@@ -74,11 +74,14 @@ Overview of ours model, the input is audio and one identity image, the output is
 
    *The First column is Identify Video it not used in the model, 2nd is Ground Truth, last one is the Prediction*
 
-   ![exp1](./stats/infer_results/240625/video_0.mp4)
 
-   ![exp2](./stats/infer_results/240625/video_1.mp4)
+   <video width="320" height="240" controls>
+      <source src="stats/infer_results/240625/video_3.mp4" type="video/mp4">
+   </video>
 
-   ![exp3](./stats/infer_results/240625/video_3.mp4)
+   <video width="320" height="240" controls>
+      <source src="stats/infer_results/240625/video_1.mp4" type="video/mp4">
+   </video>
 
 
 ***Please star and follow if this repository helpful for you***

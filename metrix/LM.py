@@ -15,3 +15,4 @@ class LandmarkVelocityDifference:
         pred_velocity = pred_landmarks[:, :, :, :1] - pred_landmarks[:, :, :, :-1]
         true_velocity = true_landmarks[:, :, :, :1] - true_landmarks[:, :, :, :-1]
         return torch.mean(torch.norm(pred_velocity - true_velocity))
+    
