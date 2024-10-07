@@ -1,0 +1,13 @@
+{
+    "datalist": "dataset/M030/infer_M030.json",
+    "audio_path": "dataset/M030/audio",
+    "landmark_path": "dataset/M030/landmark",
+    "video_path": "dataset/M030/video",
+    "duration": 1,
+    "num_workers": 4,
+    "batch": 1,
+    "device": "cuda",
+    "weights": "weights/lightning_logs/240625*/checkpoints/epoch=199-step=28800.ckpt",
+
+    "out_dir": "./output/"
+}

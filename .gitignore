@@ -4,7 +4,8 @@ dataset
 temp 
 lightning_logs
 weights
-
+output
+quality_compair
 
 
 ################################################################

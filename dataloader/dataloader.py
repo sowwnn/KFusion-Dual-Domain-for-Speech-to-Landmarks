@@ -17,8 +17,9 @@ class MEAD(Dataset):
         self.landmark_path = landmark_path
         self.datalist = datalist[:ln]
         self.time = duration
-        self.mn = 0
-        self.mx = 256
+        
+        self.mn = 56
+        self.mx = 243
 
     def __len__(self):
         return len(self.datalist)

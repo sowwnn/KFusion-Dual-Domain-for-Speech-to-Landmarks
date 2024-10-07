@@ -58,6 +58,29 @@ Overview of ours model, the input is audio and one identity image, the output is
     ```
 
 ---
+
+### Inference
+
+- Download this weights from [here](https://drive.google.com/drive/folders/15zRusNsttVbKsE0KT2ogl3rRWIuCq4pd?usp=drive_link)
+- Configure the test file like example at [config/infer.json](config/infer.json)
+- Run this command:
+   ```
+   python3 inference.py --config config/infer.json
+   ```
+
+
+### Demo:
+   This is compaired of the results with ground truth.
+
+   *The First column is Identify Video it not used in the model, 2nd is Ground Truth, last one is the Prediction*
+
+   ![exp1](./stats/infer_results/240625/video_0.mp4)
+
+   ![exp2](./stats/infer_results/240625/video_1.mp4)
+
+   ![exp3](./stats/infer_results/240625/video_3.mp4)
+
+
 ***Please star and follow if this repository helpful for you***
 
 **Authorized by sowwn**
