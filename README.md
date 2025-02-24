@@ -6,6 +6,8 @@ KAN-based Fusion of Dual Domain for Audio-Driven Landmarks Generation of the mod
 
 Overview of ours model, the input is audio and one identity image, the output is a sequence of landmarks (red) compared with original landmarks (blue).
 
+About technique paper let check it out: [arxiv](https://arxiv.org/abs/2409.05330)
+
 ![overview](static/ovw.jpg)
 ---
 
