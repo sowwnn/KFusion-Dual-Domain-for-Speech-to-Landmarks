@@ -77,6 +77,21 @@ About technique paper let check it out: [arxiv](https://arxiv.org/abs/2409.05330
    *The First column is Identify Video it not used in the model, 2nd is Ground Truth, last one is the Prediction*
 
 
+### Citation
+
+```
+@misc{vothanh2024kanbasedfusiondualdomainaudiodriven,
+      title={KAN-Based Fusion of Dual-Domain for Audio-Driven Facial Landmarks Generation}, 
+      author={Hoang-Son Vo-Thanh and Quang-Vinh Nguyen and Soo-Hyung Kim},
+      year={2024},
+      eprint={2409.05330},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2409.05330}, 
+}
+```
+
+
 ***Please star and follow if this repository helpful for you***
 
 **Authorized by sowwn**
