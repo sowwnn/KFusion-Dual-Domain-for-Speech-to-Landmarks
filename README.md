@@ -78,6 +78,7 @@ About technique paper let check it out: [arxiv](https://arxiv.org/abs/2409.05330
 
 
 ### Citation
+This is the technique report of this repo
 
 ```
 @misc{vothanh2024kanbasedfusiondualdomainaudiodriven,
@@ -90,7 +91,20 @@ About technique paper let check it out: [arxiv](https://arxiv.org/abs/2409.05330
       url={https://arxiv.org/abs/2409.05330}, 
 }
 ```
+For academic purposes, please cite this paper, including this technique
 
+```
+@INPROCEEDINGS{11149961,
+  author={Vo, Son Thanh-Hoang and Nguyen, Quang-Vinh and Kim, Seungwon and Yang, Hyung-Jeong and Yeom, Soonja and Kim, Soo-Hyung},
+  booktitle={2025 IEEE International Conference on Advanced Visual and Signal-Based Systems (AVSS)}, 
+  title={ATL-Diff: Audio-Driven Talking Head Generation with Early Landmarks-Guide Noise Diffusion}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-6},
+  keywords={Measurement;Visualization;Head;Three-dimensional displays;Virtual assistants;Noise;Real-time systems;Computational efficiency;Synchronization;Facial animation},
+  doi={10.1109/AVSS65446.2025.11149961}}
+```
 
 ***Please star and follow if this repository helpful for you***
 
